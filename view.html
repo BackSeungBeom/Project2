@@ -1,0 +1,36 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>View Student Information</title>
+        <link rel="stylesheet" href="my.css">
+    </head>
+    <body id="viewbody">
+        <h1>Student Information</h1>
+
+        <div id="student-info">
+            <p><strong>Name:</strong> Son</p>
+            <p><strong>Grade:</strong> 1</p>
+            <p><strong>Student Number:</strong> 22500135</p>
+            <p><strong>Gender:</strong> Male</p>
+            <p><strong>Major:</strong> Chemistry</p>
+        </div>
+
+        <div id="edit-delete-buttons">
+            <button onclick="editStudent()">Edit</button>
+            <button onclick="confirmDelete()">Delete</button>
+        </div>
+
+        <script>
+            function editStudent() {
+                window.location.href = "edit.html";
+            }
+
+            function confirmDelete() {
+                if (confirm("게시물을 삭제할까요?")) {
+                    window.location.href = "index.html";
+                }
+            }
+        </script>
+    </body>
+</html>

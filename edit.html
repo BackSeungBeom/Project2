@@ -1,0 +1,75 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Edit Student Information</title>
+        <link rel="stylesheet" href="my.css">
+    </head>
+    <body>
+        <h1 id="title">Edit Student Information</h1>
+
+        <form>
+            <label for="name">Name*:</label>
+            <input type="text" id="name" name="name" value="Son" required>
+
+            <label for="grade">Grade*:</label>
+            <label><input type='radio' name='grade' value='1' checked/>1학년</label>
+            <label><input type='radio' name='grade' value='2' />2학년</label>
+            <label><input type='radio' name='grade' value='3' />3학년</label>
+            <label><input type='radio' name='grade' value='4' />4학년</label> 
+
+            <label for="studentno">Student Number*:</label>
+            <input type="text" id="studentno" name="studentno" value="22500135" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="None">None</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <label for="major">Major*:</label>
+            <input type="text" id="major" name="major" value="Chemistry">
+        </form>
+        <div>
+            <button type="button" onclick="updateStudent()">Update</button>
+            <button type="button" onclick="cancle()">Cancle</button>
+        </div>
+
+        <script>
+            function updateStudent() {
+                var name = document.getElementById("name").value;
+                var studentno = document.getElementById("studentno").value;
+                var major = document.getElementById("major").value;
+
+                var gradeElements = document.getElementsByName("grade");
+                var grade;
+
+                for (var i = 0; i < gradeElements.length; i++) {
+                    if (gradeElements[i].checked) {
+                        grade = gradeElements[i].value;
+                        break;
+                    }
+                }
+
+                if (isNaN(studentno)) {
+                    alert("학번은 숫자만 입력 가능합니다.");
+                    return;
+                }
+
+                if (!name || !grade || !studentno || !major) {
+                    alert("이름, 학년, 학번, 전공은 필수 항목입니다.");
+                    return;
+                }
+
+                if (confirm("게시물을 수정할까요?")) {
+                    window.location.href = "index.html";
+                }
+            }
+
+            function cancle() {
+                window.location.href = "index.html";
+            }
+        </script>
+    </body>
+</html>

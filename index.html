@@ -1,0 +1,134 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>Student Information - List</title>
+        <link rel="stylesheet" href="my.css">
+    </head>
+    <body>
+        <h1>Student Information</h1>
+        <table id="student-table">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Name</th>
+                    <th>Grade</th>
+                    <th>Student Number</th>
+                    <th>Major</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr onclick="viewStudent('Student 3', 10, 1, 'Male', 'Chemistry')">
+                    <td>1</td>
+                    <td>Son</td>
+                    <td>1</td>
+                    <td>22500135</td>
+                    <td>Chemistry</td>
+                    <td>
+                        <button onclick="editStudent(event)">Edit</button>
+                        <button onclick="deleteStudent(event)">Delete</button>
+                    </td>
+                </tr>
+                <tr onclick="viewStudent('Student 5', 9, 3, 'Male', 'English')">
+                    <td>2</td>
+                    <td>Kim</td>
+                    <td>2</td>
+                    <td>22600162</td>
+                    <td>English</td>
+                    <td>
+                        <button onclick="editStudent(event)">Edit</button>
+                        <button onclick="deleteStudent(event)">Delete</button>
+                    </td>
+                </tr>
+                <tr onclick="viewStudent('Student 6', 12, 1, 'Female', 'Mathematics')">
+                    <td>3</td>
+                    <td>Park</td>
+                    <td>1</td>
+                    <td>22500512</td>
+                    <td>Mathematics</td>
+                    <td>
+                        <button onclick="editStudent(event)">Edit</button>
+                        <button onclick="deleteStudent(event)">Delete</button>
+                    </td>
+                </tr>
+                <tr onclick="viewStudent('Student 7', 10, 2, 'Male', 'Physics')">
+                    <td>4</td>
+                    <td>Back</td>
+                    <td>1</td>
+                    <td>22500053</td>
+                    <td>Physics</td>
+                    <td>
+                        <button onclick="editStudent(event)">Edit</button>
+                        <button onclick="deleteStudent(event)">Delete</button>
+                    </td>
+                </tr>
+                <tr onclick="viewStudent('Student 8', 11, 1, 'Female', 'Chemistry')">
+                    <td>5</td>
+                    <td>Kang</td>
+                    <td>3</td>
+                    <td>22700112</td>
+                    <td>Chemistry</td>
+                    <td>
+                        <button onclick="editStudent(event)">Edit</button>
+                        <button onclick="deleteStudent(event)">Delete</button>
+                    </td>
+                </tr>
+                <tr onclick="viewStudent('Student 9', 9, 3, 'Male', 'Biology')">
+                    <td>6</td>
+                    <td>Han</td>
+                    <td>2</td>
+                    <td>22600293</td>
+                    <td>Biology</td>
+                    <td>
+                        <button onclick="editStudent(event)">Edit</button>
+                        <button onclick="deleteStudent(event)">Delete</button>
+                    </td>
+                </tr>
+                <tr onclick="viewStudent('Student 10', 12, 2, 'Female', 'Computer Science')">
+                    <td>7</td>
+                    <td>Ryu</td>
+                    <td>3</td>
+                    <td>22700222</td>
+                    <td>Computer Science</td>
+                    <td>
+                        <button onclick="editStudent(event)">Edit</button>
+                        <button onclick="deleteStudent(event)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div id="add-button-container">
+            <button onclick="goToAddPage()">Add</button>
+        </div>
+
+        <div id="page-numbers">
+            <div class="arrow">&lt;</div>
+            <div class="page-number">1</div>
+            <div class="page-number">2</div>
+            <div class="page-number">3</div>
+            <div class="arrow">&gt;</div>        
+        </div>
+
+        <script>
+            function deleteStudent(event) {
+                event.stopPropagation();
+                confirm("게시물을 삭제할까요?")
+            }
+
+            function viewStudent() {
+                window.location.href = "view.html";
+            }
+
+            function editStudent(event) {
+                event.stopPropagation();
+                window.location.href = "edit.html";
+            }
+
+            function goToAddPage() {
+                window.location.href = "add.html";
+            }
+        </script>
+    </body>
+</html>
